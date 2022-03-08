@@ -17,10 +17,14 @@ app.get('/api/notes', (req, res) => {
 });
 
 app.post('/api/notes', (req, res) => {
-    // set id based on what the next index of the array will be
-    req.body.id = notes.length.toString();
-  
-    res.json(req.body);
+    req.body.id = notes.length;
+    const newNote = req.body;
+    notes.push(newNote);
+    fs.writeFileSync(
+      path.join(__dirname, '/db/db.json'),
+      JSON.stringify(notes, null, 2)
+    );
+    res.json(newNote);
 });
 
 // HTML Routes
