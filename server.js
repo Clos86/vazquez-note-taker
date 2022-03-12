@@ -27,6 +27,21 @@ app.post('/api/notes', (req, res) => {
     res.json(newNote);
 });
 
+app.delete('/api/notes/:id', (req, res) => {
+    const deleteNote = req.params.id;
+    notes.splice(deleteNote, 1);
+  
+    for(let i = 0; i < notes.length; i++){
+      notes[i].id = i;
+    }
+  
+    fs.writeFileSync(
+      path.join(__dirname, '/db/db.json'), 
+      JSON.stringify(notes, null, 2)
+    );
+    res.json(req.body);
+  });
+
 // HTML Routes 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
