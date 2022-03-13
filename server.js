@@ -27,6 +27,7 @@ app.post('/api/notes', (req, res) => {
     res.json(newNote);
 });
 
+// Delete note
 app.delete('/api/notes/:id', (req, res) => {
     const deleteNote = req.params.id;
     notes.splice(deleteNote, 1);
