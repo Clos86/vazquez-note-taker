@@ -20,4 +20,8 @@
  
   ## Questions
   If you have any questions about this projects, please contact me directly at [c.vazquez1986@gmail.com](mailto:c.vazquez1986@gmail.com).  
+<<<<<<< HEAD
   You can view more of my projects at [Clos86](https://github.com/Clos86).
+=======
+  You can view more of my projects at [Clos86](https://github.com/Clos86).
+>>>>>>> e7fcccc1abb69043e0661b41724eb6da40aba9b4
